@@ -16,6 +16,7 @@ import javax.ejb.EJB;
 /**
  *
  * @author Kenneth
+ * Elaine tester
  */
 public class Main {
     @EJB (name = "TilbakemeldingBean")
