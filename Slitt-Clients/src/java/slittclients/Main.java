@@ -56,10 +56,21 @@ public class Main {
         String tilbakemelding = TilbakemeldingRemote.Tilbakemelding("Ikke så bra jobbet","Modul trengs ditt og datt","Nei det var en setter", Boolean.FALSE);
         System.out.print(tilbakemelding);
         
+    
+        
         
                 
                 
     }
     
-    
+    public String addUser(String firstname, String lastname, int telephone, String mail){
+        return UserRemote.AddUser(firstname, lastname, telephone, mail);
+        
+      
+    }
+    public boolean loginUser(String username, String password){
+        return true;
+    }
+           
 }
+

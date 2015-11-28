@@ -5,6 +5,9 @@
  */
 package Vinduer;
 
+import phunk.MinProfil;
+import slittclients.Main;
+
 /**
  *
  * @author Øystein
@@ -27,9 +30,9 @@ public class Startside extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPasswordField1 = new javax.swing.JPasswordField();
-        jTextField1 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        jPasswordFieldPassword = new javax.swing.JPasswordField();
+        jTextFieldUsername = new javax.swing.JTextField();
+        jButtonLoggpå = new javax.swing.JButton();
         bileBakgrunn = new javax.swing.JLabel();
         jTextField2 = new javax.swing.JTextField();
         jTextField3 = new javax.swing.JTextField();
@@ -37,15 +40,20 @@ public class Startside extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 0, 0));
 
-        jPasswordField1.setBackground(new java.awt.Color(0, 0, 0));
-        jPasswordField1.setForeground(new java.awt.Color(255, 255, 255));
-        jPasswordField1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
+        jPasswordFieldPassword.setBackground(new java.awt.Color(0, 0, 0));
+        jPasswordFieldPassword.setForeground(new java.awt.Color(255, 255, 255));
+        jPasswordFieldPassword.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
 
-        jTextField1.setBackground(new java.awt.Color(0, 0, 0));
-        jTextField1.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
+        jTextFieldUsername.setBackground(new java.awt.Color(0, 0, 0));
+        jTextFieldUsername.setForeground(new java.awt.Color(255, 255, 255));
+        jTextFieldUsername.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
 
-        jButton1.setText("Logg på");
+        jButtonLoggpå.setText("Logg på");
+        jButtonLoggpå.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButtonLoggpåMouseClicked(evt);
+            }
+        });
 
         bileBakgrunn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/me/myimageapp/newpackage/Forside login.png"))); // NOI18N
 
@@ -72,38 +80,50 @@ public class Startside extends javax.swing.JFrame {
                     .addComponent(jTextField3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jButtonLoggpå)
+                    .addComponent(jTextFieldUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPasswordFieldPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(495, 495, 495))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(bileBakgrunn))
         );
 
-        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jButton1, jPasswordField1, jTextField1});
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jButtonLoggpå, jPasswordFieldPassword, jTextFieldUsername});
 
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(457, 457, 457)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1)
+                    .addComponent(jTextFieldUsername)
                     .addComponent(jTextField2))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPasswordFieldPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField3))
                 .addGap(18, 18, 18)
-                .addComponent(jButton1)
+                .addComponent(jButtonLoggpå)
                 .addGap(307, 307, 307))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(bileBakgrunn))
         );
 
-        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jButton1, jPasswordField1, jTextField1});
+        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jButtonLoggpå, jPasswordFieldPassword, jTextFieldUsername});
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButtonLoggpåMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonLoggpåMouseClicked
+        Main main=new Main();
+        MinProfil profil=new MinProfil ();
+        if (main.loginUser(jTextFieldUsername.getText(), jPasswordFieldPassword.getText())){
+            profil.setVisible(true);
+            this.setVisible(false);
+        }
+        
+               
+        
+    }//GEN-LAST:event_jButtonLoggpåMouseClicked
 
     /**
      * @param args the command line arguments
@@ -145,10 +165,10 @@ public class Startside extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel bileBakgrunn;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JButton jButtonLoggpå;
+    private javax.swing.JPasswordField jPasswordFieldPassword;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextFieldUsername;
     // End of variables declaration//GEN-END:variables
 }

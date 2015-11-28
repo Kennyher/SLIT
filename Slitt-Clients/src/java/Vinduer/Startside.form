@@ -34,9 +34,9 @@
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jButton1" linkSize="5" min="-2" max="-2" attributes="0"/>
-                  <Component id="jTextField1" linkSize="5" min="-2" pref="121" max="-2" attributes="0"/>
-                  <Component id="jPasswordField1" linkSize="5" min="-2" max="-2" attributes="0"/>
+                  <Component id="jButtonLoggpå" linkSize="5" min="-2" max="-2" attributes="0"/>
+                  <Component id="jTextFieldUsername" linkSize="5" min="-2" pref="121" max="-2" attributes="0"/>
+                  <Component id="jPasswordFieldPassword" linkSize="5" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="495" max="-2" attributes="0"/>
           </Group>
@@ -50,16 +50,16 @@
           <Group type="102" attributes="0">
               <EmptySpace min="-2" pref="457" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jTextField1" linkSize="6" alignment="3" max="32767" attributes="0"/>
+                  <Component id="jTextFieldUsername" linkSize="6" alignment="3" max="32767" attributes="0"/>
                   <Component id="jTextField2" alignment="3" max="32767" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jPasswordField1" linkSize="6" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jPasswordFieldPassword" linkSize="6" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jTextField3" alignment="3" max="32767" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="jButton1" linkSize="6" min="-2" max="-2" attributes="0"/>
+              <Component id="jButtonLoggpå" linkSize="6" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="307" max="-2" attributes="0"/>
           </Group>
           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
@@ -69,7 +69,7 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JPasswordField" name="jPasswordField1">
+    <Component class="javax.swing.JPasswordField" name="jPasswordFieldPassword">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="0" green="0" red="0" type="rgb"/>
@@ -86,7 +86,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField1">
+    <Component class="javax.swing.JTextField" name="jTextFieldUsername">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="0" green="0" red="0" type="rgb"/>
@@ -103,10 +103,13 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton1">
+    <Component class="javax.swing.JButton" name="jButtonLoggp&#xe5;">
       <Properties>
         <Property name="text" type="java.lang.String" value="Logg p&#xe5;"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButtonLoggp&#xe5;MouseClicked"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="bileBakgrunn">
       <Properties>
