@@ -38,7 +38,7 @@ public class Main {
        // TestBeanHandler tHandler = new TestBeanHandler();
        // tHandler.printTest();
         
-        String user = UserRemote.AddUser("Øystein", "Traskjær", 82937215, "Øystein@hotmail.com");
+        String user = UserRemote.AddUser("Elaine", "Sajets", 40169322, "Elaine@hotamil.com");
         System.out.print(user);
         
         String fremgang = FremgangRemote.Fremgang("Ikke Godkjent", "Masse Dårlig", "Gjorde det og det");
@@ -56,6 +56,8 @@ public class Main {
         String tilbakemelding = TilbakemeldingRemote.Tilbakemelding("Ikke så bra jobbet","Modul trengs ditt og datt","Nei det var en setter", Boolean.FALSE);
         System.out.print(tilbakemelding);
         
+        UserRemote.delete("Oystein");
+        
     
         
         
@@ -63,14 +65,17 @@ public class Main {
                 
     }
     
-    public String addUser(String firstname, String lastname, int telephone, String mail){
+   /* public String addUser(String firstname, String lastname, int telephone, String mail){
         return UserRemote.AddUser(firstname, lastname, telephone, mail);
         
       
     }
+    
+    
     public boolean loginUser(String username, String password){
+        
         return true;
     }
-           
+   */        
 }
 

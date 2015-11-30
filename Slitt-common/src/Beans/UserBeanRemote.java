@@ -16,4 +16,6 @@ public interface UserBeanRemote {
 
     public String AddUser(String FirstName, String LastName, int TlfNr, String Email);
 
+    public void delete(String firstname);
+
 }

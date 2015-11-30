@@ -34,14 +34,28 @@ public class UserBean implements UserBeanRemote {
 
     }
     
-    //@Override
-    //public void delete(String firstname) {
-    //    TypedQuery<Bruker> q = em.createNamedQuery("Bruker.byFirstname", Bruker.class);
-    //    q.setParameter("firstname", firstname);
-    //    List<Bruker> ls = q.getResultList();
-    //    if (ls.size() == 1) delete(ls.get(0));
-    //}
-    // Add business logic below. (Right-click in editor and choose
-    // "Insert Code > Add Business Method")
+    /*
+    @Override
+    public void delete(String firstname) {
+        TypedQuery<Bruker> q = em.createNamedQuery("Bruker.byFirstname", Bruker.class);
+        q.setParameter("firstname", firstname);
+        List<Bruker> ls = q.getResultList();
+        if (ls.size() == 1) ls.remove(0);
+        System.out.println("sletter bruker med firstname" + firstname);
+    }*/
+    
+    public void delete(String name) {
+        em.createQuery(
+        "DELETE FROM Bruker b WHERE b.FirstName LIKE :firstName")
+        .setParameter("firstName", name)
+        .setMaxResults(1);
+        System.out.println("sletter bruker med firstname" + name);
+    }
+    
+    
+    
+    
+//Add business logic below. (Right-click in editor and choose
+     //"Insert Code > Add Business Method")
 
 }
