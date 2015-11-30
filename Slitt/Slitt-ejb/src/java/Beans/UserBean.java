@@ -6,9 +6,11 @@
 package Beans;
 
 import Enteties.Bruker;
+import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
 
 /**
  *
@@ -31,6 +33,14 @@ public class UserBean implements UserBeanRemote {
         return u.getFirstName();
 
     }
+    
+    //@Override
+    //public void delete(String firstname) {
+    //    TypedQuery<Bruker> q = em.createNamedQuery("Bruker.byFirstname", Bruker.class);
+    //    q.setParameter("firstname", firstname);
+    //    List<Bruker> ls = q.getResultList();
+    //    if (ls.size() == 1) delete(ls.get(0));
+    //}
     // Add business logic below. (Right-click in editor and choose
     // "Insert Code > Add Business Method")
 
