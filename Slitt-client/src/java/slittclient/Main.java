@@ -12,6 +12,7 @@ import Beans.ModulBeanRemote;
 import Beans.TilbakemeldingBeanRemote;
 import Beans.UserBeanRemote;
 import javax.ejb.EJB;
+import phunk.Innlogging;
 
 /**
  *
@@ -38,7 +39,7 @@ public class Main {
        // TestBeanHandler tHandler = new TestBeanHandler();
        // tHandler.printTest();
         
-        String user = UserRemote.AddUser("Elaine", "Sajets", 40169322, "Elaine@hotamil.com");
+        /*String user = UserRemote.AddUser("Elaine", "Sajets", 40169322, "Elaine@hotamil.com");
         System.out.print(user);
         
         String fremgang = FremgangRemote.Fremgang("Ikke Godkjent", "Masse Dårlig", "Gjorde det og det");
@@ -57,6 +58,12 @@ public class Main {
         System.out.print(tilbakemelding);
         
         UserRemote.delete("Oystein");
+                */
+        
+        Innlogging i = new Innlogging();
+        i.setVisible(true);
+        
+        
         
     
         
@@ -65,17 +72,19 @@ public class Main {
                 
     }
     
-   /* public String addUser(String firstname, String lastname, int telephone, String mail){
+    public String addUser(String firstname, String lastname, int telephone, String mail){
         return UserRemote.AddUser(firstname, lastname, telephone, mail);
         
       
     }
     
     
-    public boolean loginUser(String username, String password){
+    public static boolean loginUser(String username, String password){
+        System.out.println(username + ", "  + password);
+        boolean result = UserRemote.loggInn(username, password);
+        System.out.println("result " + result);
+        return result;
         
-        return true;
-    }
-   */        
+    }      
 }
 

@@ -18,4 +18,6 @@ public interface UserBeanRemote {
 
     public void delete(String firstname);
 
+    public boolean loggInn(String username, String password);
+
 }

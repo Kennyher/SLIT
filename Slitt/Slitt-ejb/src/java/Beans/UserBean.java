@@ -52,7 +52,19 @@ public class UserBean implements UserBeanRemote {
         System.out.println("sletter bruker med firstname" + name);
     }
     
-    
+    public boolean loggInn(String username, String password) {
+        List<Bruker> brukerListe = em.createQuery(
+        "SELECT b FROM Bruker b WHERE b.FirstName LIKE :firstName AND b.LastName LIKE :lastName" )
+        .setParameter("firstName", username)
+        .setParameter("lastName", password)       
+        .setMaxResults(1)
+        .getResultList();
+        System.out.println("logg inn" + username);
+        if(brukerListe.isEmpty()){
+            return false;
+        }
+        return true;
+    }
     
     
 //Add business logic below. (Right-click in editor and choose

@@ -153,8 +153,8 @@ public class Innlogging extends javax.swing.JFrame {
 
     private void LoggInnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoggInnActionPerformed
     MinProfil minP=new MinProfil();
-    Main main= new Main();
-    if(main.loginUser (jTextFieldUsername.getText(), jPasswordFieldPassword.getText())) {
+    //Main main= new Main();
+    if(Main.loginUser (jTextFieldUsername.getText(), jPasswordFieldPassword.getText())) {
         this.setVisible(false);
         minP.setVisible(true);
     }
